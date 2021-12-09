@@ -280,6 +280,7 @@ public class Arrays {
 
     List<Object> actualAsList = asList(actual);
     IterableDiff<?> diff = diff(actualAsList, asList(values), comparisonStrategy);
+
     if (!diff.differencesFound()) {
       // actual and values have the same elements but are they in the same order ?
       int arrayLength = sizeOf(actual);

@@ -218,6 +218,11 @@ public class ComparatorBasedComparisonStrategy extends AbstractComparisonStrateg
   }
 
   @Override
+  public boolean isGreaterThanOrEqualTo(Object actual, Object other) {
+    return areEqual(actual, other) || isGreaterThan(actual, other);
+  }
+
+  @Override
   public boolean isStandard() {
     return false;
   }

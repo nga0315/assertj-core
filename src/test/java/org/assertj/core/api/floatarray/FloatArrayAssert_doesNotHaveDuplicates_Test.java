@@ -14,10 +14,12 @@ package org.assertj.core.api.floatarray;
 
 import org.assertj.core.api.FloatArrayAssert;
 import org.assertj.core.api.FloatArrayAssertBaseTest;
+import org.assertj.core.data.Offset;
 import org.junit.jupiter.api.Test;
 
 import static org.assertj.core.api.Assertions.assertThat;
 import static org.assertj.core.api.Assertions.withPrecision;
+import static org.assertj.core.data.Offset.offset;
 import static org.assertj.core.test.FloatArrays.arrayOf;
 import static org.mockito.Mockito.verify;
 
@@ -28,6 +30,7 @@ import static org.mockito.Mockito.verify;
  * @author Alex Ruiz
  */
 class FloatArrayAssert_doesNotHaveDuplicates_Test extends FloatArrayAssertBaseTest {
+  private final Offset<Float> offset = offset(0.01f);
 
   @Override
   protected FloatArrayAssert invoke_api_method() {
@@ -52,7 +55,7 @@ class FloatArrayAssert_doesNotHaveDuplicates_Test extends FloatArrayAssertBaseTe
     // GIVEN
     float[] actual = arrayOf(1.0f, 1.05f);
     // THEN
-    assertThat(actual).usingComparatorWithPrecision(0.01f)
+    assertThat(actual).usingComparatorWithPrecision(offset)
                       .doesNotHaveDuplicates();
   }
 }

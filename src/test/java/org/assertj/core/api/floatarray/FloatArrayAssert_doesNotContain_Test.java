@@ -14,10 +14,12 @@ package org.assertj.core.api.floatarray;
 
 import static org.assertj.core.api.Assertions.assertThat;
 import static org.assertj.core.api.Assertions.withPrecision;
+import static org.assertj.core.data.Offset.offset;
 import static org.assertj.core.test.FloatArrays.arrayOf;
 
 import org.assertj.core.api.FloatArrayAssert;
 import org.assertj.core.api.FloatArrayAssertBaseTest;
+import org.assertj.core.data.Offset;
 import org.junit.jupiter.api.Test;
 
 import static org.mockito.Mockito.verify;
@@ -29,7 +31,7 @@ import static org.mockito.Mockito.verify;
  * @author Alex Ruiz
  */
 class FloatArrayAssert_doesNotContain_Test extends FloatArrayAssertBaseTest {
-
+  private final Offset<Float> offset = offset(0.01f);
   @Override
   protected FloatArrayAssert invoke_api_method() {
     return assertions.doesNotContain(6f, 8f);
@@ -53,7 +55,7 @@ class FloatArrayAssert_doesNotContain_Test extends FloatArrayAssertBaseTest {
     // GIVEN
     float[] actual = arrayOf(1.0f, 2.0f);
     // THEN
-    assertThat(actual).usingComparatorWithPrecision(0.01f)
+    assertThat(actual).usingComparatorWithPrecision(offset)
                       .doesNotContain(1.1f, 2.1f);
   }
 }

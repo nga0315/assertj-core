@@ -15,6 +15,7 @@ package org.assertj.core.api;
 import static java.lang.Math.abs;
 
 import java.util.Comparator;
+import org.assertj.core.data.Offset;
 
 public class ComparatorFactory {
 
@@ -37,18 +38,18 @@ public class ComparatorFactory {
     return closeToComparator;
   }
 
-  public Comparator<Float> floatComparatorWithPrecision(final float precision) {
+  public Comparator<Float> floatComparatorWithPrecision(Offset<Float> offset) {
     @SuppressWarnings("unused")
     Comparator<Float> closeToComparator = new Comparator<Float>() {
       @Override
       public int compare(Float o1, Float o2) {
-        if(abs(o1.floatValue() - o2.floatValue()) < precision) return 0;
+        if(abs(o1.floatValue() - o2.floatValue()) <= offset.value) return 0;
         return o1.floatValue() - o2.floatValue() > 0 ? 1 : -1;
       }
 
       @Override
       public String toString() {
-        return "float comparator at precision " + precision;
+        return "float comparator at precision " + offset.value;
       }
     };
     return closeToComparator;

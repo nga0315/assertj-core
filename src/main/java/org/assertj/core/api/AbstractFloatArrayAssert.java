@@ -197,7 +197,7 @@ public abstract class AbstractFloatArrayAssert<SELF extends AbstractFloatArrayAs
    * Verifies that the actual array contains the given values, in any order.
    * <p>
    * If you want to set a precision for the comparison either use {@link #contains(float[], Offset)}
-   * or {@link #usingComparatorWithPrecision(Float)} before calling the assertion.
+   * or {@link #usingComparatorWithPrecision(Offset)} before calling the assertion.
    * <p>
    * Examples :
    * <pre><code class='java'> float[] values = new float[] {1.0f, 2.0f, 3.0f};
@@ -274,7 +274,7 @@ public abstract class AbstractFloatArrayAssert<SELF extends AbstractFloatArrayAs
    * @throws AssertionError if the actual array does not contain the given values.
    */
   public SELF contains(float[] values, Offset<Float> precision) {
-    return usingComparatorWithPrecision(precision.value).contains(values);
+    return usingComparatorWithPrecision(precision).contains(values);
   }
 
   /**
@@ -301,14 +301,14 @@ public abstract class AbstractFloatArrayAssert<SELF extends AbstractFloatArrayAs
    * @since 3.19.0
    */
   public SELF contains(Float[] values, Offset<Float> precision) {
-    return usingComparatorWithPrecision(precision.value).contains(toPrimitiveFloatArray(values));
+    return usingComparatorWithPrecision(precision).contains(toPrimitiveFloatArray(values));
   }
 
   /**
    * Verifies that the actual array contains only the given values and nothing else, in any order.
    * <p>
    * If you want to set a precision for the comparison either use {@link #containsOnly(float[], Offset)}
-   * or {@link #usingComparatorWithPrecision(Float)} before calling the assertion.
+   * or {@link #usingComparatorWithPrecision(Offset)} before calling the assertion.
    * <p>
    * Examples :
    * <pre><code class='java'> float[] values = new double[] {1.0f, 2.0f, 3.0f};
@@ -392,7 +392,7 @@ public abstract class AbstractFloatArrayAssert<SELF extends AbstractFloatArrayAs
    *           or none of the given values, or the actual array contains more values than the given ones.
    */
   public SELF containsOnly(float[] values, Offset<Float> precision) {
-    return usingComparatorWithPrecision(precision.value).containsOnly(values);
+    return usingComparatorWithPrecision(precision).containsOnly(values);
   }
 
   /**
@@ -421,14 +421,14 @@ public abstract class AbstractFloatArrayAssert<SELF extends AbstractFloatArrayAs
    * @since 3.19.0
    */
   public SELF containsOnly(Float[] values, Offset<Float> precision) {
-    return usingComparatorWithPrecision(precision.value).containsOnly(toPrimitiveFloatArray(values));
+    return usingComparatorWithPrecision(precision).containsOnly(toPrimitiveFloatArray(values));
   }
 
   /**
    * Verifies that the actual array contains the given values only once.
    * <p>
    * If you want to set a precision for the comparison either use {@link #containsOnlyOnce(float[], Offset)}
-   * or {@link #usingComparatorWithPrecision(Float)} before calling the assertion.
+   * or {@link #usingComparatorWithPrecision(Offset)} before calling the assertion.
    * <p>
    * Examples :
    * <pre><code class='java'> // assertions will pass
@@ -506,7 +506,7 @@ public abstract class AbstractFloatArrayAssert<SELF extends AbstractFloatArrayAs
   *           or none of the given values, or the actual group contains more than once these values.
   */
   public SELF containsOnlyOnce(float[] values, Offset<Float> precision) {
-    return usingComparatorWithPrecision(precision.value).containsOnlyOnce(values);
+    return usingComparatorWithPrecision(precision).containsOnlyOnce(values);
   }
 
   /**
@@ -533,14 +533,14 @@ public abstract class AbstractFloatArrayAssert<SELF extends AbstractFloatArrayAs
    * @since 3.19.0
    */
   public SELF containsOnlyOnce(Float[] values, Offset<Float> precision) {
-    return usingComparatorWithPrecision(precision.value).containsOnlyOnce(toPrimitiveFloatArray(values));
+    return usingComparatorWithPrecision(precision).containsOnlyOnce(toPrimitiveFloatArray(values));
   }
 
   /**
    * Verifies that the actual array contains the given sequence, without any other values between them.
    * <p>
    * If you want to set a precision for the comparison either use {@link #containsSequence(float[], Offset)}
-   * or {@link #usingComparatorWithPrecision(Float)} before calling the assertion.
+   * or {@link #usingComparatorWithPrecision(Offset)} before calling the assertion.
    * <p>
    * Examples :
    * <pre><code class='java'> float[] values = new float[] { 1.0f, 2.0f, 3.0f };
@@ -617,7 +617,7 @@ public abstract class AbstractFloatArrayAssert<SELF extends AbstractFloatArrayAs
    * @throws AssertionError if the actual array does not contain the given sequence.
    */
   public SELF containsSequence(float[] sequence, Offset<Float> precision) {
-    return usingComparatorWithPrecision(precision.value).containsSequence(sequence);
+    return usingComparatorWithPrecision(precision).containsSequence(sequence);
   }
 
   /**
@@ -645,14 +645,14 @@ public abstract class AbstractFloatArrayAssert<SELF extends AbstractFloatArrayAs
    * @since 3.19.0
    */
   public SELF containsSequence(Float[] sequence, Offset<Float> precision) {
-    return usingComparatorWithPrecision(precision.value).containsSequence(toPrimitiveFloatArray(sequence));
+    return usingComparatorWithPrecision(precision).containsSequence(toPrimitiveFloatArray(sequence));
   }
 
   /**
    * Verifies that the actual array contains the given subsequence (possibly with other values between them).
    * <p>
    * If you want to set a precision for the comparison either use {@link #containsSubsequence(float[], Offset)}
-   * or {@link #usingComparatorWithPrecision(Float)} before calling the assertion.
+   * or {@link #usingComparatorWithPrecision(Offset)} before calling the assertion.
    * <p>
    * Examples :
    * <pre><code class='java'> float[] values = new float[] { 1.0f, 2.0f, 3.0f };
@@ -729,7 +729,7 @@ public abstract class AbstractFloatArrayAssert<SELF extends AbstractFloatArrayAs
    * @throws AssertionError if the actual array does not contain the given subsequence.
    */
   public SELF containsSubsequence(float[] subsequence, Offset<Float> precision) {
-    return usingComparatorWithPrecision(precision.value).containsSubsequence(subsequence);
+    return usingComparatorWithPrecision(precision).containsSubsequence(subsequence);
   }
 
   /**
@@ -757,14 +757,14 @@ public abstract class AbstractFloatArrayAssert<SELF extends AbstractFloatArrayAs
    * @since 3.19.0
    */
   public SELF containsSubsequence(Float[] subsequence, Offset<Float> precision) {
-    return usingComparatorWithPrecision(precision.value).containsSubsequence(toPrimitiveFloatArray(subsequence));
+    return usingComparatorWithPrecision(precision).containsSubsequence(toPrimitiveFloatArray(subsequence));
   }
 
   /**
    * Verifies that the actual array contains the given value at the given index.
    * <p>
    * If you want to set a precision for the comparison either use {@link #contains(float, Index, Offset)}
-   * or {@link #usingComparatorWithPrecision(Float)} before calling the assertion.
+   * or {@link #usingComparatorWithPrecision(Offset)} before calling the assertion.
    * <p>
    * Example:
    * <pre><code class='java'> float[] values = new float[] { 1.0f, 2.0f, 3.0f };
@@ -821,14 +821,14 @@ public abstract class AbstractFloatArrayAssert<SELF extends AbstractFloatArrayAs
    * @throws AssertionError if the actual array does not contain the given value at the given index.
    */
   public SELF contains(float value, Index index, Offset<Float> precision) {
-    return usingComparatorWithPrecision(precision.value).contains(value, index);
+    return usingComparatorWithPrecision(precision).contains(value, index);
   }
 
   /**
    * Verifies that the actual array does not contain the given values.
    * <p>
    * If you want to set a precision for the comparison either use {@link #doesNotContain(float[], Offset)}
-   * or {@link #usingComparatorWithPrecision(Float)} before calling the assertion.
+   * or {@link #usingComparatorWithPrecision(Offset)} before calling the assertion.
    * <p>
    * Example:
    * <pre><code class='java'> float[] values = new float[] { 1.0f, 2.0f, 3.0f };
@@ -901,7 +901,7 @@ public abstract class AbstractFloatArrayAssert<SELF extends AbstractFloatArrayAs
    * @throws AssertionError if the actual array contains any of the given values.
    */
   public SELF doesNotContain(float[] values, Offset<Float> precision) {
-    return usingComparatorWithPrecision(precision.value).doesNotContain(values);
+    return usingComparatorWithPrecision(precision).doesNotContain(values);
   }
 
   /**
@@ -927,14 +927,14 @@ public abstract class AbstractFloatArrayAssert<SELF extends AbstractFloatArrayAs
    * @since 3.19.0
    */
   public SELF doesNotContain(Float[] values, Offset<Float> precision) {
-    return usingComparatorWithPrecision(precision.value).doesNotContain(toPrimitiveFloatArray(values));
+    return usingComparatorWithPrecision(precision).doesNotContain(toPrimitiveFloatArray(values));
   }
 
   /**
    * Verifies that the actual array does not contain the given value at the given index.
    * <p>
    * If you want to set a precision for the comparison either use {@link #doesNotContain(float, Index, Offset)}
-   * or {@link #usingComparatorWithPrecision(Float)} before calling the assertion.
+   * or {@link #usingComparatorWithPrecision(Offset)} before calling the assertion.
    * <p>
    * Example:
    * <pre><code class='java'> float[] values = new float[] { 1.0f, 2.0f, 3.0f };
@@ -985,14 +985,14 @@ public abstract class AbstractFloatArrayAssert<SELF extends AbstractFloatArrayAs
    * @throws AssertionError if the actual array contains the given value at the given index.
    */
   public SELF doesNotContain(float value, Index index, Offset<Float> precision) {
-    return usingComparatorWithPrecision(precision.value).doesNotContain(value, index);
+    return usingComparatorWithPrecision(precision).doesNotContain(value, index);
   }
 
   /**
    * Verifies that the actual array does not contain duplicates.
    * <p>
    * If you want to set a precision for the comparison either use {@link #doesNotHaveDuplicates(Offset)}
-   * or {@link #usingComparatorWithPrecision(Float)} before calling the assertion.
+   * or {@link #usingComparatorWithPrecision(Offset)} before calling the assertion.
    * <p>
    * Example:
    * <pre><code class='java'> // assertions will pass
@@ -1032,7 +1032,7 @@ public abstract class AbstractFloatArrayAssert<SELF extends AbstractFloatArrayAs
    * @throws AssertionError if the actual array contains duplicates.
    */
   public SELF doesNotHaveDuplicates(Offset<Float> precision) {
-    return usingComparatorWithPrecision(precision.value).doesNotHaveDuplicates();
+    return usingComparatorWithPrecision(precision).doesNotHaveDuplicates();
   }
 
   /**
@@ -1041,7 +1041,7 @@ public abstract class AbstractFloatArrayAssert<SELF extends AbstractFloatArrayAs
    * sequence is also first element of the actual array.
    * <p>
    * If you want to set a precision for the comparison either use {@link #startsWith(float[], Offset)}
-   * or {@link #usingComparatorWithPrecision(Float)} before calling the assertion.
+   * or {@link #usingComparatorWithPrecision(Offset)} before calling the assertion.
    * <p>
    * Example:
    * <pre><code class='java'> float[] values = new float[] { 1.0f, 2.0f, 3.0f };
@@ -1118,7 +1118,7 @@ public abstract class AbstractFloatArrayAssert<SELF extends AbstractFloatArrayAs
    * @throws AssertionError if the actual array does not end with the given sequence.
    */
   public SELF startsWith(float[] values, Offset<Float> precision) {
-    return usingComparatorWithPrecision(precision.value).startsWith(values);
+    return usingComparatorWithPrecision(precision).startsWith(values);
   }
 
   /**
@@ -1148,7 +1148,7 @@ public abstract class AbstractFloatArrayAssert<SELF extends AbstractFloatArrayAs
    * @since 3.19.0
    */
   public SELF startsWith(Float[] values, Offset<Float> precision) {
-    return usingComparatorWithPrecision(precision.value).startsWith(toPrimitiveFloatArray(values));
+    return usingComparatorWithPrecision(precision).startsWith(toPrimitiveFloatArray(values));
   }
 
   /**
@@ -1157,7 +1157,7 @@ public abstract class AbstractFloatArrayAssert<SELF extends AbstractFloatArrayAs
    * sequence is also last element of the actual array.
    * <p>
    * If you want to set a precision for the comparison either use {@link #endsWith(float[], Offset)}
-   * or {@link #usingComparatorWithPrecision(Float)} before calling the assertion.
+   * or {@link #usingComparatorWithPrecision(Offset)} before calling the assertion.
    * <p>
    * Example:
    * <pre><code class='java'> float[] values = new float[] { 1.0f, 2.0f, 3.0f };
@@ -1234,7 +1234,7 @@ public abstract class AbstractFloatArrayAssert<SELF extends AbstractFloatArrayAs
    * @throws AssertionError if the actual array does not end with the given sequence.
    */
   public SELF endsWith(float[] values, Offset<Float> precision) {
-    return usingComparatorWithPrecision(precision.value).endsWith(values);
+    return usingComparatorWithPrecision(precision).endsWith(values);
   }
 
   /**
@@ -1264,7 +1264,7 @@ public abstract class AbstractFloatArrayAssert<SELF extends AbstractFloatArrayAs
    * @since 3.19.0
    */
   public SELF endsWith(Float[] values, Offset<Float> precision) {
-    return usingComparatorWithPrecision(precision.value).endsWith(toPrimitiveFloatArray(values));
+    return usingComparatorWithPrecision(precision).endsWith(toPrimitiveFloatArray(values));
   }
 
   /** {@inheritDoc} */
@@ -1301,7 +1301,7 @@ public abstract class AbstractFloatArrayAssert<SELF extends AbstractFloatArrayAs
    * Verifies that the actual group contains only the given values and nothing else, <b>in order</b>.
    * <p>
    * If you want to set a precision for the comparison either use {@link #containsExactly(float[], Offset)}
-   * or {@link #usingComparatorWithPrecision(Float)} before calling the assertion.
+   * or {@link #usingComparatorWithPrecision(Offset)} before calling the assertion.
    * <p>
    * Example :
    * <pre><code class='java'> float[] values = new float[] { 1.0f, 2.0f, 3.0f };
@@ -1378,7 +1378,7 @@ public abstract class AbstractFloatArrayAssert<SELF extends AbstractFloatArrayAs
    *           more values than the given ones or values are the same but the order is not.
    */
   public SELF containsExactly(float[] values, Offset<Float> precision) {
-    return usingComparatorWithPrecision(precision.value).containsExactly(values);
+    return usingComparatorWithPrecision(precision).containsExactly(values);
   }
 
   /**
@@ -1408,7 +1408,7 @@ public abstract class AbstractFloatArrayAssert<SELF extends AbstractFloatArrayAs
    * @since 3.19.0
    */
   public SELF containsExactly(Float[] values, Offset<Float> precision) {
-    return usingComparatorWithPrecision(precision.value).containsExactly(toPrimitiveFloatArray(values));
+    return usingComparatorWithPrecision(precision).containsExactly(toPrimitiveFloatArray(values));
   }
 
   /**
@@ -1472,7 +1472,7 @@ public abstract class AbstractFloatArrayAssert<SELF extends AbstractFloatArrayAs
    * @return {@code this} assertion object.
    */
   @CheckReturnValue
-  public SELF usingComparatorWithPrecision(Float precision) {
+  public SELF usingComparatorWithPrecision(Offset<Float> precision) {
     return usingElementComparator(ComparatorFactory.INSTANCE.floatComparatorWithPrecision(precision));
   }
 
