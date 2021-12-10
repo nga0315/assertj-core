@@ -48,8 +48,15 @@ class FloatArrayAssert_containsExactly_with_Float_array_Test extends FloatArrayA
     Float[] values = new Float[] { 0.9f, 2.1f, 2.9f };
     // WHEN/THEN
     assertThat(arrayOf(1.0f, 2.0f, 3.0f)).containsExactly(values, withPrecision(0.2f));
-    assertThat(new float[]{0.2f}).containsExactly(new float[]{0.7f}, withPrecision(0.5f));
   }
+
+  @Test
+  void should_pass_if_values_are_in_range_of_precision_strict_tests() {
+    assertThat(new float[]{0.2f}).containsExactly(new float[]{0.7f}, withPrecision(0.5f));
+    assertThat(new float[]{0.2f, 0.5f, 0.1f, 10.9f}).containsExactly(new float[]{0.7f, 0.01f, 0.6f, 10.4f}, withPrecision(0.5f));
+
+  }
+
 
   @Override
   protected FloatArrayAssert invoke_api_method() {
